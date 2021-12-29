@@ -25,7 +25,9 @@ class Controller extends BaseController
 //        $path = Storage::putFile('avatars', $request->file('avatar'));
 
 
-        $path = Storage::disk('s3')->put('foo/bar/baz.txt', 'some content', 'public');
+//        $path = Storage::disk('s3')->put('/baz.txt', 'some content', 'public');
+        $path = Storage::disk('s3')->put('hello.txt', 'check text');
+
 
         return $path;
     }
