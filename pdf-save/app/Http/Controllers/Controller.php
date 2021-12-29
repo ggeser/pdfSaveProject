@@ -17,18 +17,22 @@ class Controller extends BaseController
      * Обновить аватар пользователя.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return bool
      */
     public function upload(Request $request)
     {
-//        $path = $request->file('avatar')->store('avatars');
-//        $path = Storage::putFile('avatars', $request->file('avatar'));
+
+        // проверить что пришел pdf
+        // приверить пришел ли вообще файл
 
 
-//        $path = Storage::disk('s3')->put('/baz.txt', 'some content', 'public');
-        $path = Storage::disk('s3')->put('hello.txt', 'check text');
+//        $path = $request->file('pdfFile')->store('/', 's3');
+        $path = $request->file('pdfFile')->store('/', 's3');
+        $url = Storage::disk('s3')->url($path);
+
+        return $url;
 
 
-        return $path;
+
     }
 }

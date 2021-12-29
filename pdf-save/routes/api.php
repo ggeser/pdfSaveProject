@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/upload', [Controller::class, 'upload']);
-Route::get('/upload', [Controller::class, 'upload']);
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/', [Controller::class, 'upload']);
+//Route::get('/upload', [Controller::class, 'upload']);
+//
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
